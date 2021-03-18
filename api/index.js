@@ -50,7 +50,7 @@ router.post('/books', async(req, res, next) =>{
 router.get('/books/:id', async(req, res, next)=>{
     try{
         res.send(await Book.findAll({
-            attributes:['title', 'ISBN', 'image', 'published_date'],
+            attributes:['id', 'title', 'ISBN', 'image', 'published_date'],
             include:[{
                 model: Publisher,
                 attributes:[['name', 'publisher_name']]
